@@ -50,13 +50,11 @@ app.use((_req, res) => {
 });
 
 // Start server
-if (require.main === module) {
-  app.listen(PORT, () => {
-    logger.info(`Server is running on port ${PORT}`, { port: PORT, env: process.env.NODE_ENV });
-    console.log(`Server is running on http://localhost:${PORT}`);
-    console.log(`Health check: http://localhost:${PORT}/api/health`);
-  });
-}
+app.listen(PORT, () => {
+  logger.info(`Server is running on port ${PORT}`, { port: PORT, env: process.env.NODE_ENV });
+  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Health check: http://localhost:${PORT}/api/health`);
+});
 
 export default app;
 
